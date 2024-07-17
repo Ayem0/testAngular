@@ -1,0 +1,17 @@
+<div *ngIf="member">
+    <div class="container">
+        <p><span>{{ member.id }}.</span><span>{{ member.name | titlecase}}</span></p>
+        <app-rename-user [(member)]="member"></app-rename-user>
+        <!--
+        <form [formGroup]="form" (submit)="changeName()">
+            <input id="name" type="text" formControlName="name" placeholder="New Name">
+            <button [disabled]="!form.valid" type="submit">Rename</button>
+        </form>
+        -->
+    </div>
+</div>
+<div *ngIf="!member">
+    <div class="container">
+        <p>Member does not exist.</p>
+    </div>
+</div>

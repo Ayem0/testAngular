@@ -1,0 +1,24 @@
+<div class="container-center">
+    <p>Top Members :</p>
+</div>
+<div class="container-center">
+    <ul>
+        <li *ngFor="let member of topMembers | slice:0:4">
+            <span class="pr">{{ member.id }}.</span><a [routerLink]="['/team', member.id]">{{ member.name | titlecase}}</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+<div class="container-center">
+    <input class="searchbar" id="name" type="text" [formControl]="name" placeholder="Search by name">
+</div>
+
+<ul>
+    <li *ngFor="let member of team">
+        <span class="pr">{{ member.id }}.</span><a [routerLink]="['/team', member.id]">{{ member.name | titlecase}}</a>
+    </li>
+</ul>

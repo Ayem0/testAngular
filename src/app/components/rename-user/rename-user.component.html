@@ -1,0 +1,6 @@
+<div *ngIf="member">
+    <form [formGroup]="form" (submit)="changeName()">
+        <input id="name" type="text" [formControl]="name" placeholder="New Name">
+        <button [disabled]="!form.valid" type="submit">Save changes</button>
+    </form>
+</div>

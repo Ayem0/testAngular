@@ -1,0 +1,7 @@
+<div class="form-container">
+    <form [formGroup]="form" (submit)="addMember()">
+        <input id="id" type="number" [formControl]="id" placeholder="Id">
+        <input id="name" type="text" [formControl]="name" placeholder="Name">
+        <button [disabled]="!form.valid" type="submit">Add member</button>
+    </form>
+</div>
