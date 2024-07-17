@@ -1,7 +1,13 @@
 <div class="form-container">
     <form [formGroup]="form" (submit)="addMember()">
         <input id="id" type="number" [formControl]="id" placeholder="Id">
+        <div *ngIf="id.errors?.['required']">
+            <span>Id is required.</span>
+        </div>
         <input id="name" type="text" [formControl]="name" placeholder="Name">
-        <button [disabled]="!form.valid" type="submit">Add member</button>
+        <div *ngIf="name.errors?.['required']">
+            <span>Name is required.</span>
+        </div>
+        <button [disabled]="form.invalid" type="submit">Add member</button>
     </form>
 </div>

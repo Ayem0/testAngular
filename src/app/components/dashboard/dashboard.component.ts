@@ -10,7 +10,7 @@ import { TeamServiceService } from 'src/app/services/team-service.service';
 })
 export class DashboardComponent implements OnInit {
 
-  team : Member[] = [];
+  members : Member[] = [];
   topMembers : Member[] = [];
 
   name = new FormControl('');
@@ -23,9 +23,9 @@ export class DashboardComponent implements OnInit {
     this.topMembers = this.teamService.getMembers();
     this.name.valueChanges.subscribe( (value : string) => {
       if (value.trim()) {
-        this.team = this.teamService.getMembers().filter( member => member.name.toLowerCase().match(value.toLowerCase()))
+        this.members = this.topMembers.filter( member => member.name.toLowerCase().match(value.toLowerCase()))
       } else {
-        this.team = [];
+        this.members = [];
       }
     })
   }

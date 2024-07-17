@@ -18,7 +18,7 @@
 </div>
 
 <ul>
-    <li *ngFor="let member of team">
+    <li *ngFor="let member of members">
         <span class="pr">{{ member.id }}.</span><a [routerLink]="['/team', member.id]">{{ member.name | titlecase}}</a>
     </li>
 </ul>
