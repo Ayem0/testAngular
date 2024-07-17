@@ -1,11 +1,11 @@
 <div class="form-container">
     <form [formGroup]="form" (submit)="addMember()">
         <input id="id" type="number" [formControl]="id" placeholder="Id">
-        <div *ngIf="id.errors?.['required']">
+        <div *ngIf="id.errors?.['required'] && (id.dirty || id.touched)">
             <span>Id is required.</span>
         </div>
         <input id="name" type="text" [formControl]="name" placeholder="Name">
-        <div *ngIf="name.errors?.['required']">
+        <div *ngIf="name.errors?.['required']  && (name.dirty || name.touched)">
             <span>Name is required.</span>
         </div>
         <button [disabled]="form.invalid" type="submit">Add member</button>
